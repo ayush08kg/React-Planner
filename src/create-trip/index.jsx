@@ -85,7 +85,6 @@ function CreateTrip() {
         <Button onClick = {onGenerateTrip}>Generate Trip</Button>
         </div>
     </div>
-
   )
 }
 
