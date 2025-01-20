@@ -2,9 +2,11 @@ import { Input } from '@/components/ui/input';
 // import { Input } from 'postcss';
 import React, { useEffect, useState } from 'react'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
-import { SelectBudgetOptions } from '@/constants/options'; 
+import { AI_PROMPT, SelectBudgetOptions } from '@/constants/options'; 
 import { SelectTravelsList } from '@/constants/options'; 
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
+import { chatSession } from '@/service/AIModal';
 
 function CreateTrip() {
     const [place, setPlace] = useState()
@@ -19,11 +21,20 @@ function CreateTrip() {
         console.log(formData);
     },[formData]) // whenever value changes this hook will be executed
 
-    const onGenerateTrip = ()=>{
-        if (formData?.noOfDays>5) {
+    const onGenerateTrip = async()=>{
+        if (formData?.noOfDays>5 && !formData?.location || !formData?.budget || !formData?.traveller) {
+            toast("Please Fill in all the details")
             return ;
         }
-        console.log(formData);
+        const FINAL_PROMPT = AI_PROMPT
+        .replace('{location}',formData?.location.label)
+        .replace('{totalDays}',formData?.noOfDays)
+        .replace('{traveller}',formData?.traveller)
+        .replace('{budget}',formData?.budget)
+        .replace('{Days}',formData?.noOfDays)
+        console.log(FINAL_PROMPT);
+        const result = await chatSession.sendMessage(FINAL_PROMPT);
+        console.log("--",result?.response?.text());
     }
 
   return (
