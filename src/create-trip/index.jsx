@@ -20,11 +20,15 @@ import {
 
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "@/service/firebaseConfig";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 function CreateTrip() {
   const [place, setPlace] = useState();
   const [formData, setFormData] = useState([]);
   const [openDailog, setOpenDailog] = useState(false);
+  const [loading, setLoading] = useState(false);
   const handleInputChange = (name, value) => {
     setFormData({
       ...formData,
@@ -50,7 +54,7 @@ function CreateTrip() {
   // },[])
 
   const onGenerateTrip = async () => {
-    console.log("Ongeneratefn")
+    console.log("Ongeneratefn");
     const user = localStorage.getItem("user");
     if (!user) {
       console.log("User not logged in, opening");
@@ -66,6 +70,7 @@ function CreateTrip() {
       toast("Please Fill in all the details");
       return;
     }
+    setLoading(true);
     const FINAL_PROMPT = AI_PROMPT.replace(
       "{location}",
       formData?.location.label
@@ -74,9 +79,24 @@ function CreateTrip() {
       .replace("{traveller}", formData?.traveller)
       .replace("{budget}", formData?.budget)
       .replace("{Days}", formData?.noOfDays);
-    console.log(FINAL_PROMPT);
+
     const result = await chatSession.sendMessage(FINAL_PROMPT);
     console.log("--", result?.response?.text());
+    setLoading(false);
+    SaveAiTrip(result?.response?.text());
+  };
+
+  const SaveAiTrip = async (TripData) => {
+    setLoading(true);
+    const user = JSON.parse(localStorage.getItem("user"));
+    const docID = Date.now().toString();
+    await setDoc(doc(db, "AITrips", docID), {
+      userSelection: formData,
+      tripData: JSON.parse(TripData),
+      userEmail: user?.email,
+      id: docID,
+    });
+    setLoading(false);
   };
 
   const GetUserProfile = (tokenInfo) => {
@@ -180,7 +200,13 @@ function CreateTrip() {
       </div>
 
       <div className="my-10 justify-end flex">
-        <Button onClick={onGenerateTrip}>Generate Trip</Button>
+        <Button disabled={loading} onClick={onGenerateTrip}>
+          {loading ? (
+            <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
+          ) : (
+            "Generate Trip"
+          )}
+        </Button>
       </div>
 
       <Dialog open={openDailog}>
