@@ -57,6 +57,12 @@ function Header() {
       <div>
         {user ? (
           <div className="flex items-center gap-3">
+
+            <a href="/create-trip" className="text-black-500">
+              <Button variant="outline" className="rounded-full">
+                <span className="text-black-500">+ Create Trip</span>
+              </Button>
+            </a>
             
             <a href="/my-trips" className="text-black-500">
               <Button variant="outline" className="rounded-full">
