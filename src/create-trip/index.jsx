@@ -155,6 +155,7 @@ function CreateTrip() {
             placeholder="Ex: 5"
             onChange={(e) => handleInputChange("noOfDays", e.target.value)}
           />
+          <h2 className="text-gray-400 italic">Note: No. of days should be less than 5</h2>
         </div>
       </div>
 
@@ -166,7 +167,7 @@ function CreateTrip() {
               key={index}
               onClick={() => handleInputChange("budget", item.title)}
               className={`p-4 border rounded-lg hover:shadow-lg
-                ${formData?.budget == item.title && "shadow-lg border-black"}`}
+                ${formData?.budget == item.title && "shadow-lg border-black bg-yellow-200"}`}
             >
               {/*if the data matches selected item then add border*/}
               <h2 className="text-4xl">{item.icon}</h2>
@@ -189,7 +190,7 @@ function CreateTrip() {
               className={`p-4 border rounded-lg hover:shadow-lg
                     ${
                       formData?.traveller == item.people &&
-                      "shadow-lg border-black"
+                      "shadow-lg border-black bg-green-300"
                     } 
                 `}
             >
@@ -217,14 +218,15 @@ function CreateTrip() {
         <DialogContent>
           <DialogHeader>
             <DialogDescription>
-              <img src="/logo.svg" alt="App Logo" />
-              <h2 className="font-bold text-lg mt-7">Sign In with Google</h2>
+              <img src="/logo1.png" alt="App Logo" className="h-20 w-20" />
+              <h2 className="font-bold text-lg mt-7">Make Sure You're Signed In With Google </h2>
               <p>Sign in to the App with Google authentication securely</p>
+              <p>No more passwords to remember. Signing in is fast, simple and secure.</p>
               <Button
                 onClick={login}
-                className="w-full mt-5 flex gap-4 items-center"
+                className="w-full h-10 mt-5 flex gap-4 items-center rounded-full text-black bg-white border-gray-700 hover:text-white "
               >
-                <FcGoogle className="h-7 w-7" />
+                <FcGoogle className="h-10 w-10" />
                 Sign In With Google
               </Button>
             </DialogDescription>
