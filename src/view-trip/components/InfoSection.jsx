@@ -29,7 +29,7 @@ function InfoSection({ trip }) {
         alt=""
         className="rounded-xl h-[340px] w-full object-cover"
       />
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mt-2">
         <div className="my-5 flex flex-col gap-2">
           <h2 className="font-semibold text-xl">
             {trip?.userSelection?.location?.label}

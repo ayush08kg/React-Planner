@@ -60,14 +60,14 @@ function Header() {
           <div className="flex items-center gap-3">
 
             <a href="/create-trip" className="text-black-500">
-              <Button variant="outline" className="rounded-full">
-                <span className="text-black-500">+ Create Trip</span>
+              <Button variant="outline" className="rounded-full p-4 text-white bg-[#5454dae0]">
+                <span >+ Create Trip</span>
               </Button>
             </a>
             
             <a href="/my-trips" className="text-black-500">
-              <Button variant="outline" className="rounded-full">
-                <span className="text-black-500">My Trips</span>
+              <Button variant="outline" className="rounded-full p-4 text-white bg-[#5454dae0]">
+                <span >My Trips</span>
               </Button>
             </a>
             {/* Display user's profile picture */}
@@ -80,9 +80,9 @@ function Header() {
                   className="h-[35px] w-[35px] rounded-full"
                 />
               </PopoverTrigger>
-              <PopoverContent>
+              <PopoverContent className=" w-[180px] text-white bg-red-500 hover:scale-105">
                 <h2
-                  className="cursor-pointer"
+                  className="cursor-pointer text-center"
                   onClick={() => {
                     googleLogout();
                     localStorage.clear();
@@ -104,12 +104,13 @@ function Header() {
         <DialogContent>
           <DialogHeader>
             <DialogDescription>
-              <img src="/logo.svg" alt="App Logo" />
-              <h2 className="font-bold text-lg mt-7">Sign In with Google</h2>
-              <p>Sign in to the App with Google authentication securely</p>
+              <img src="/logo1.png" alt="App Logo" className="h-20 w-20" />
+              <h2 className="font-bold text-lg mt-7">Make Sure You're Signed In With Google</h2>
+              <p>Sign in to the App with Google authentication securely.</p>
+              <p>No more passwords to remember. Signing in is fast, simple and secure.</p>
               <Button
                 onClick={login}
-                className="w-full mt-5 flex gap-4 items-center"
+                className="w-full h-10 mt-5 flex gap-4 items-center rounded-full text-black bg-white border-gray-700 hover:text-white "
               >
                 <FcGoogle className="h-7 w-7" />
                 Sign In With Google

@@ -37,7 +37,7 @@ function MyTrips() {
           <UserTripCardItem trip={trip}/>
         ))}
       </div>
-
+      <div className='mb-20'></div>
     </div>
   )
 }
