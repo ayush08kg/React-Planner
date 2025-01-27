@@ -53,8 +53,8 @@ function Header() {
 
   return (
     
-    <div className="p-3 shadow-sm flex justify-between items-center bg-[#9bcdcb4e] rounded-3xl rounded-t-none ">
-      <img src="/logo1.png" className="h-[60px] w-[60px]" alt="Logo" />
+    <div className="p-3 shadow-sm flex justify-between items-center bg-[#9bcdcb4e] rounded-3xl rounded-t-none shadow-[#65c5ca]">
+      <a href="/"><img src="/logo1.png" className="h-[60px] w-[60px]" alt="Logo" /></a>
       <div>
         {user ? (
           <div className="flex items-center gap-3">
