@@ -27,21 +27,21 @@ function InfoSection({ trip }) {
       <img
         src={photoUrl}
         alt=""
-        className="rounded-xl h-[340px] w-full object-cover"
+        className="rounded-xl h-[340px] w-full object-cover border-2 border-[#816c6c] "
       />
       <div className="flex justify-between items-center mt-2">
         <div className="my-5 flex flex-col gap-2">
-          <h2 className="font-semibold text-xl">
+          <h2 className="font-semibold text-2xl mb-2">
             {trip?.userSelection?.location?.label}
           </h2>
           <div className="flex gap-5">
-            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-gray-500 ">
+            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-gray-500 border-gray-400 border-2">
               📅{trip?.userSelection?.noOfDays} Days
             </h2>
-            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-gray-500 ">
+            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-gray-500 border-gray-400 border-2">
               💰{trip?.userSelection?.budget} Budget
             </h2>
-            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-gray-500 ">
+            <h2 className="p-1 px-3 bg-gray-200 rounded-full text-gray-500 border-gray-400 border-2">
               🧑🏻‍🦱No. of Traveller : {trip?.userSelection?.traveller}
             </h2>
           </div>
