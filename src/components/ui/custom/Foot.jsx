@@ -2,8 +2,8 @@ import React from 'react';
 
 function Foot() {
   return (
-    <div className='mt-20 p-5 shadow-sm flex flex-col justify-center items-center bg-[#9bcdcb4e] rounded-3xl rounded-b-none shadow-[#65c5ca]'>
-      <div className='text-center font-semibold text-lg mb-1'>
+    <div className='mt-20 p-5 shadow-sm flex flex-col justify-center items-center bg-[#9bcdcb4e] rounded-3xl rounded-b-none border-t-4 shadow-[#65c5ca]'>
+      <div className='text-center font-semibold text-lg mb-2'>
         Built By The One & Only A.K.G
       </div>
 
@@ -14,7 +14,7 @@ function Foot() {
           href="https://www.linkedin.com/in/akg08/"
           target="_blank"
           rel="noopener noreferrer"
-          className='px-4 py-2 bg-[#9bcdcb00] text-white rounded-full hover:bg-white hover:border-red-600 flex justify-center items-center'
+          className='px-4 py-2 bg-[#9bcdcb00] text-white rounded-full hover:bg-white hover:border-red-600 hover:scale-110  flex justify-center items-center'
         >
           <img src="/linkedin.svg" alt="LinkedIn" className='w-7 h-7' />
         </a>
@@ -24,7 +24,7 @@ function Foot() {
           href="https://github.com/ayush08kg"
           target="_blank"
           rel="noopener noreferrer"
-          className='px-4 py-2 bg-[#9bcdcb00] text-white rounded-full hover:bg-white hover:border-red-600 flex justify-center items-center'
+          className='px-4 py-2 bg-[#9bcdcb00] text-white rounded-full hover:bg-white hover:border-red-600 hover:scale-110 flex justify-center items-center'
         >
           <img src="/github.svg" alt="GitHub" className='w-8 h-8' />
         </a>
