@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { Button } from './components/ui/button'
 import Hero from './components/ui/custom/Hero'
+import Foot from './components/ui/custom/Foot'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,6 +12,7 @@ function App() {
   return (
     <>
       <Hero/>
+      <Foot/>
     </>
   )
 }
