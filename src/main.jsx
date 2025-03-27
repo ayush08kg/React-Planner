@@ -10,6 +10,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Viewtrip from "./view-trip/[tripId]/index.jsx";
 import MyTrips from "./my-trips";
+import Foot from "./components/ui/custom/Foot";
 
 export default function RootLayout({ children }) {
   return (
@@ -48,6 +49,7 @@ createRoot(document.getElementById("root")).render(
       <Header />
       <Toaster />
       <RouterProvider router={router} />
+      <Foot/>
     </GoogleOAuthProvider>
   </StrictMode>
 );

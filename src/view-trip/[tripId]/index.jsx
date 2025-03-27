@@ -48,8 +48,6 @@ function Viewtrip() {
 
       {/* Footer */}
 
-      <Footer/>
-
     </div>
   )
 }
