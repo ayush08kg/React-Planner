@@ -4,13 +4,29 @@ import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
-    <div className='flex flex-col items-center mx-56 gap-9 mt-20 rounded-3xl border hover:scale-105 transition-all bg-[#bbd9c9b1] backdrop-blur-lg bg-opacity-30'>
-        <h1 className='font-bold  mt-8 text-center'><span className='text-blue-400'>Plan Genie </span><span className='text-slate-500'>Welcomes</span> <span className='text-red-400'>You 🫵</span></h1>
-        <h1 className='font-bold text-[46px] text-center mt-1 text-[#7878ca]'> <span className='text-[#302670]'>Embark on Your Next Journey with AI:<br></br></span>Customized Itineraries Designed for You</h1>
-        <p className='text-xl font-medium text-black text-center'>Your personal travel assistant, crafting unique itineraries suited to your preferences and budget..</p>
-        <Link to={'/create-trip'}><Button className='py-[30px] px-[20px] bg-[#3636ca]  hover:bg-white hover:text-black rounded-full mb-15 mt-6'>Get Started, It's Free</Button></Link>
-        <h1 className='mb-7 text-[20px] font-semibold text-center text-[#2ba3ae]'>Let's Go....🚘💨🏁
-        </h1>
+    <div className='flex flex-col items-center mx-20 gap-8 mt-20 p-12 rounded-3xl border hover:scale-[1.02] transition-all bg-gradient-to-r from-[#d0e8df] to-[#e6ecf1] shadow-xl'>
+      
+      <h1 className='font-extrabold text-4xl md:text-5xl text-center leading-tight text-gray-800'>
+        Welcome to <span className='text-blue-600'>Plan Genie</span>
+      </h1>
+
+      <h2 className='font-semibold text-2xl md:text-3xl text-center text-gray-600'>
+        Personalized Itineraries Crafted by AI
+      </h2>
+
+      <p className='text-lg text-gray-500 text-center max-w-2xl'>
+        Your travel companion for planning unforgettable journeys — tailored perfectly to your interests, time, and budget.
+      </p>
+
+      <Link to='/create-trip'>
+        <Button className='py-4 px-8 bg-blue-600 hover:bg-blue-700 text-white rounded-full mt-6 text-lg font-semibold transition'>
+          Start Your Adventure
+        </Button>
+      </Link>
+
+      <p className='text-base font-medium text-gray-500 mt-4'>
+        Ready to explore? Let’s get moving 🚀
+      </p>
     </div>
   )
 }
